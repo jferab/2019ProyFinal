@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MicroMachines Tarea Semana 10</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<script src="lib/Tween.js"></script>
+		<link rel="Stylesheet" href="css/estilo.css">
+	
+	</head>
+	<body>
+		<div id="contenedorInicio" >
+			<div id="contenedorIzq" >
+				<p id="idLogin" class="menuIzq">Login </p>
+				<p id="idSignin" class="menuIzq">Sign In</p>
+				<p id="musica" class="menuIzq">Musica</p>
+                <input class="menuIzq" type="range" min="0" max="1" step="0.1" id="slidervolumen">
+			</div>
+			<div id="contenedorDer">
+				<div id="contenedorLogin">
+ 					<ul class="list-group" id="lgLogin" >
+						<li class="list-group-item" id="lgInicioItem" >
+								<div id="msgLogin"></div>
+								<h2>Login</h2><br>
+			  					<input type="text" id="inUsuario" name="inUsuario" placeholder="Nombre de Usuario" autofocus class="form-control">
+			  					<input type="text" id="inContrasena" name="inContrasena" placeholder="Contraseña" class="form-control"><br>
+							  	<button id="btnEntrarLogin" type="button" class="btn btn-danger">Entrar</button>
+					  	</li>
+					</ul>
+				</div>
+				<div id="contenedorSignin">
+ 					<ul class="list-group" id="lgLogin" >
+						<li class="list-group-item" id="lgInicioItem" >
+								<div id="msgSignin"></div>
+								<h2>Sign in</h2><br>
+			  					<input type="text" id="inUsuario2" name="inUsuario2" placeholder="Nombre de Usuario" autofocus class="form-control">
+			  					<input type="text" id="inContrasena2" name="inContrasena2" placeholder="Contraseña" class="form-control">
+			  					<input type="text" id="inNombre" name="inNombre" placeholder="Nombre" class="form-control">
+			  					<input type="text" id="inApellidos" name="inApellidos" placeholder="Apellidos" class="form-control">
+			  					<br>
+							  	<button id="btnEntrarSignin" type="button" class="btn btn-danger">Entrar</button>
+					  	</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+			<div id="contenedorSegundo">
+				<div id="contenedorLista">
+					<h1 id="tituloSala">Sala de espera</h1><br>
+					<ul class="list-group" id="lgEspera" >
+						<li class="list-group-item list-group-item-success">
+							    <h2>Lista de usuarios</h2> 
+					  	</li>
+	
+					</ul>
+				</div>
+				<div id="contenedorEventos">
+					
+					<p id="TituloP2">Selecciona el Coche</p>
+					<canvas id="lienzoPersonaje2" width=750px height=650px ></canvas>
+					
+					<button id="Patras" type="button" class="btn btn-success"><</button><br>
+				    <button id="Psiguiente" type="button" class="btn btn-success">></button><br>
+					
+					<button id="btnListo" type="button" class="btn btn-danger">Empezar partida</button>
+					
+					
+				</div>
+				
+				<div id="contenedorChat">
+					<p id="TituloP3">Chat</p>
+						<div id="chatMessage">
+				     
+				            	<div id="mensajes"></div>
+		        		</div>
+		        		<button id="enviamensaje">Enviar</button>
+		        		<input type="text" id="nuevomensaje">
+				</div>
+			
+			<div id="contenedorFin">
+				<div id="contenedorFinMsg">
+					<ul class="list-group" id="lgFin" >
+						<li class="list-group-item">
+							    <h1>Has destruido la estrella de la muerte.....</h1> 
+							  	<button id="btnFin" type="button" class="btn btn-danger">Volver</button>
+					  	</li>
+					</ul>
+				</div>
+				</div>
+			</div>
+			
+			<div id="contenedorJuego">
+				<div id="contenedorLienzos">
+					<canvas id="lienzoFondoNegro" width="1648px" height="1888px" ></canvas>
+					<canvas id="lienzoFondo" width="1648px" height="1888px" ></canvas>
+					<canvas id="lienzoJugador" width="1648px" height="1888px" ></canvas>
+					<canvas id="lienzoAtaque" width="1648px" height="1888px" ></canvas>
+					<canvas id="lienzoHud" width="1648px" height="1888px" ></canvas>
+
+					
+				</div>			
+				<div id="contadorInicio"></div>
+			</div>
+		
+		</div>
+	
+		<script src="lib/jquery.js"></script>
+		<script src="js/clases/Sound.js"></script><!-- Camara -->
+		<script src="js/clases/Recogible.js"></script><!-- Balas -->
+		<script src="js/clases/Player.js"></script><!-- Principal -->
+	
+		<script src="lib/rotatecanvas.js"></script>
+		
+		<script src="js/funcionesInicio.js"></script>
+
+		<script src="js/condicionesIniciales.js"></script>
+		
+		<script src="js/inicio.js"></script>
+		<script src="js/controles.js"></script> <!-- Controles -->
+
+		<script src="js/buclejuego.js"></script>
+		<script src="js/bucleespera.js"></script>
+		<script src="js/logica.js"></script>
+		
+	</body>
+</html>
