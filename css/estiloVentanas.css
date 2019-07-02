@@ -1,0 +1,35 @@
+.ventana{
+	position: absolute;
+	left:10%;
+	top:10%;
+	width: 80%;
+	margin:0px;
+	padding:0px;
+}
+
+div{
+	display: none;
+}
+
+.lgContenido{
+	justify-content: center;
+}
+
+.juegoMain{
+	position: absolute;
+	left:0%;
+	top:0%;
+	width: 80%;
+	margin:0px;
+	padding:0px;
+	border: 1px solid white;
+}
+.juegoMenu{
+	position: absolute;
+	right: 0%;
+	top:0%;
+	width: 20%;
+	margin:0px;
+	padding:0px;
+	border: 1px solid white;
+}

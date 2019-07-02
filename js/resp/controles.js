@@ -1,4 +1,4 @@
-function controles(){
+/*function controles(){
     // Gestión de las teclas
     $(document).keypress(function(event){
         // Esto es lo que pasa cuando pulso la W
@@ -16,10 +16,10 @@ function controles(){
             //console.log("Pulsado")
             player[0].sprint=1;
             //sonido.playLaser();
-          
+
         }
     });
-    
+
      $(document).keyup(function(event){
          // Esto es lo que pasa cuando pulso la W
         if ( event.which == 87 ) {player[0].avance = 0;}
@@ -32,4 +32,4 @@ function controles(){
         // Esto es lo que pasa cuando levanto el espacio
         if ( event.which == 32 ) {player[0].sprint = 0;}
     });
-}
+}*/

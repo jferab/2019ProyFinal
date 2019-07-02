@@ -4,50 +4,63 @@
 		<title>Proy Final</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-		<script src="lib/Tween.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<link rel="Stylesheet" href="css/estilo.css">
+		<link rel="Stylesheet" href="css/estiloVentanas.css">
 
 	</head>
 	<body>
-		<div id="contenedorInicio" >
-				<div id="contenedorMenu">
- 					<ul class="list-group" id="lgInicioMenu" >
-						<li class="list-group-item" id="lgInicioMenuItem" >
-								<h2>Proyecto Final</h2><br><br>
-							  	<button id="btnMenuInicio" type="button" class="btn btn-danger">Inicio</button><br><br>
-									<button id="btnMenuDificultad" type="button" class="btn btn-danger">Dificultad</button><br><br>
-									<button id="btnMenuImportar" type="button" class="btn btn-danger">Importar Archivo</button><br><br>
-					  	</li>
-					</ul>
-				</div>
-				<div id="contenedorSelPersonaje" >
-							<ul class="list-group" id="lgSelPers" >
-								<li class="list-group-item" id="lgSelPersItem" >
-										<h2>Seleccioanr Personaje</h2><br><br>
-											<input type="text" placeholder="Nombre del personaje"></input><br>
-									  	<button id="btnCrear" type="button" class="btn btn-danger">Inicio</button><br><br>
-							  	</li>
-							</ul>
-					</div>
-				</div>
+
+		<!-- *********** Ventana de inicio *********** -->
+		<div id="contenedorInicio"  >
+			<div id="contenedorMenu" class="ventana">
+				<ul class="list-group"  >
+					<li class="list-group-item" >
+						<center>
+							<h2>Proyecto Final</h2><br><br>
+							<button id="btnMenuInicio" type="button" class="btn btn-danger">Inicio</button><br><br>
+							<button id="btnMenuDificultad" type="button" class="btn btn-danger">Dificultad</button><br><br>
+							<button id="btnMenuImportar" type="button" class="btn btn-danger">Importar Archivo</button><br><br>
+						</center>
+					</li>
+				</ul>
+			</div>
+			<div id="contenedorSelPersonaje" class="ventana">
+				<ul class="list-group" id="lgSelPers" >
+					<center>
+						<li class="list-group-item" id="lgSelPersItem" >
+							<h2>Seleccioanr Personaje</h2><br><br>
+							<input type="text" id="selPerNombreUsuario" placeholder="Nombre del personaje"></input><br>
+							<button id="btnSelPerInicio" type="button" class="btn btn-danger">Inicio</button><br><br>
+						</li>
+					</center>
+				</ul>
+			</div>
+		</div>
+		<!-- *********** Juego *********** -->
 		<div id="contenedorJuego" >
-			<div id="contenedorJuegoMenu" ></div>
-			<div id="contenedorJuegoMain" ></div>
+			<div id="contenedorJuegoMenu" class="juegoMenu" >
+				<canvas id="juegoMenu" class="cvMenu"></canvas>
+			</div>
+			<div id="contenedorJuegoMain" class="juegoMain" >
+				<canvas id="juegoMain"  class="cvMain"></canvas>
+			</div>
 		</div>
 		<div id="contenedorBatalla" >
-			<div id="contenedorJuegoMenu" ></div>
-			<div id="contenedorJuegoMain" ></div>
+			<div id="contenedorJuegoMenu" class="juegoMenu" ></div>
+			<div id="contenedorJuegoMain" class="juegoMain" ></div>
 		</div>
+
+		<!-- *********** Ventanas *********** -->
 		<div id="contenedorVentanas" >
-			<div id="contenedorStats" ></div>
-			<div id="contenedorMochila" ></div>
-			<div id="contenedorMapa" ></div>
-			<div id="contenedorDialogos" ></div>
-			<div id="contenedorDificultad" >
+			<div id="contenedorStats" class="ventana"></div>
+			<div id="contenedorMochila" class="ventana"></div>
+			<div id="contenedorMapa" class="ventana"></div>
+			<div id="contenedorDialogos" class="ventana"></div>
+			<div id="contenedorDificultad" class="ventana">
 				<h2>Dificultad</h2><br><br>
 				<button id="btnDificultadFacil" type="button" class="btn btn-danger">Facil</button><br><br>
 				<button id="btnDificultadNormal" type="button" class="btn btn-danger">Normal</button><br><br>
@@ -55,23 +68,30 @@
 			</div>
 		</div>
 
-		<script src="lib/jquery.js"></script>
-		<script src="js/clases/Sound.js"></script><!-- Camara -->
-		<script src="js/clases/Recogible.js"></script><!-- Balas -->
-		<script src="js/clases/Player.js"></script><!-- Principal -->
+		<!--
+		<script src="lib/Tween.js"></script>
 
-		<script src="lib/rotatecanvas.js"></script>
-
+		<script src="js/clases/Sound.js"></script>
+		<script src="js/clases/Recogible.js"></script>
+		<script src="js/clases/Player.js"></script>
 		<script src="js/funcionesInicio.js"></script>
-
-		<script src="js/condicionesIniciales.js"></script>
-
 		<script src="js/inicio.js"></script>
-		<script src="js/controles.js"></script> <!-- Controles -->
-
+		<script src="js/controles.js"></script>
 		<script src="js/buclejuego.js"></script>
 		<script src="js/bucleespera.js"></script>
 		<script src="js/logica.js"></script>
+		-->
+
+		<script src="js/clases/Configuracion.js"></script>
+		<script src="js/clases/Ventana.js"></script>
+		<script src="lib/rotatecanvas.js"></script>
+
+		<script src="js/fnGenerales.js"></script>
+		<script src="js/eventos.js"></script>
+		<script src="js/eventoClick.js"></script>
+		<script src="js/condicionesIniciales.js"></script>
+		<script src="js/eventoClick.js"></script>
+
 
 	</body>
 </html>

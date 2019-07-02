@@ -1,4 +1,8 @@
+console.log("cond iniciales");
+$("#contenedorInicio").show();
+$("#contenedorMenu").show();
 
+/*
 
 //////CONTEXTOS///////
 	var contextoFondo = document.getElementById("lienzoFondo").getContext("2d");
@@ -15,7 +19,7 @@
 //Fin cambio RRDD 09/02/2019
 
 /////GLOBALES//////
-	var temporizador; 
+	var temporizador;
 	var fondox = 0;
 	var fondoy = 0;
 
@@ -61,3 +65,4 @@
 
 
 
+*/

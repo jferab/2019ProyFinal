@@ -1,8 +1,8 @@
-
+/*
 //funcion que reescala la ventana que ve el usuario
 function reescalaVentana(){
 	//console.log("reescalar1")
-		
+
 	    var anchuraPantalla = window.innerWidth;
 		var alturaPantalla = window.innerHeight;
 		//Pongo las propiedades del canvas.
@@ -14,15 +14,15 @@ function reescalaVentana(){
 		$("#lienzoJugador").attr("height",alturaPantalla);
 		$("#lienzoAtaque").attr("width",anchuraPantalla);
 		$("#lienzoAtaque").attr("height",alturaPantalla);
-	
-		
+
+
 	    //camara.anchuraPantalla = window.innerWidth;
 		//camara.alturaPantalla = window.innerHeight;
 }
 
 
 function actualizarLista(usr) {
-		var cadena = "<li class=\"list-group-item listaEspera\"><h3>"+usr+"</h3></li>";	
+		var cadena = "<li class=\"list-group-item listaEspera\"><h3>"+usr+"</h3></li>";
 		$( "#lgEspera" ).append(cadena);
 
 }
@@ -47,7 +47,7 @@ function enviarAjax(){
 				success:finRecibir
 				//timeout:4000,
 				//error:problemaRecibe
-		     
+
 		     });
 	}
 
@@ -59,7 +59,7 @@ function finRecibir(dato){
 	var datos = general[0].split(";");
 	for (var i = 0; i < datos.length; i++){
 		var fila = datos[i].split("|");
-	
+
 		if(parseInt(fila[2])!=player[0].id){
 			for(var j =0;j<player.length;j++){
 				//console.log(player[j].nombre, fila[0])
@@ -79,7 +79,7 @@ function finRecibir(dato){
 		player[0].impacto = 0;
 	}*/
 	banBD = true;
-        	
+
 }
 
 //login
@@ -98,9 +98,9 @@ function enviarAjaxLogin(usr,psw){
 			success:finRecibirLogin
 			//timeout:4000,
 			//error:problemas
-	     
+
 	     });
-		
+
 	}
 
 }
@@ -114,17 +114,17 @@ function finRecibirLogin(dato){
 		var datos = dato.split("|");
 		var idUsr = parseInt(datos[0]);
 		var idSala = parseInt(datos[1]);
-		
+
 		player[0] = new Player(usuario, idUsr, idSala);
 
 		actualizarLista(usuario);
 		$( "#contenedorInicio" ).hide()
 		$( "#contenedorSegundo" ).show()
 		$( "#contenedorJuego" ).hide()
-		
+
 		CrearRecogibles();
 		//lugar ajax
-		//bucleespera();//ya no lo vamos a llamar, ajaxRecogibles. pasar idusuario e idsala	
+		//bucleespera();//ya no lo vamos a llamar, ajaxRecogibles. pasar idusuario e idsala
 	}
 	banBD = true;
 
@@ -150,9 +150,9 @@ function enviarAjaxSignin(usr,psw,nombre,apellidos){
 			success:finRecibirSignin
 			//timeout:4000,
 			//error:problemas
-	     
+
 	     });
-		
+
 	}
 
 }
@@ -160,24 +160,24 @@ function finRecibirSignin(dato){
 	//console.log("respuesta",dato)
 	$("#msgSignin").text(dato)
 	if(dato[0]=="E"){
-	
+
 	}else{
-		
+
 	}
 	banBD = true;
 
 }
 
 function drawImageRot(micontexto,img,x,y,width,height,rad){
-	//Convert degrees to radian 
-	
+	//Convert degrees to radian
+
 	//St the origin to the center of the imagee
 	micontexto.translate(x + width / 2, y + height / 2);
 	//Rotate the canvas around the origin
 	micontexto.rotate(rad-Math.PI/2);
-	//draw the image    
+	//draw the image
 	micontexto.drawImage(img,width / 2 * (-1),height / 2 * (-1),width,height);
-	//reset the canvas  
+	//reset the canvas
 	micontexto.rotate((rad-Math.PI/2) * ( -1 ) );
 	micontexto.translate((x + width / 2) * (-1), (y + height / 2) * (-1));
 }
@@ -185,7 +185,7 @@ function drawImageRot(micontexto,img,x,y,width,height,rad){
 
 //cambio RRDD 09/02/2019
 function DibujarJugadorC(){
-	
+
 	//prueba, funcion para juego prueba
 	 var ladox=130;
 	 var ladoy=70;
@@ -226,29 +226,29 @@ var textochat=""
 				success:actualizaExitoP
 				//timeout:4000,
 				//error:problemaRecibe
-		     
+
 		     });
 	}
-    
+
 }
 function actualizaExitoP(dato){
 //console.log("fin sala de espera:"+dato)
-	
+
 	$( ".listaEspera" ).remove();
 	var banEncontrado = false;
 	var datos = dato.split(";");
 	for (var i = 0; i < datos.length; i++){
 		var fila = datos[i].split("|");
 		actualizarLista(fila[0]);
-		
+
 		//si el id de Usr == id del jugador principal
 		if(parseInt(fila[2])!=player[0].id){ //fila 2 tiene el id de usuario
 			banEncontrado = false;
-			
+
 			//barrido del jugador--> recogibles
 			for(var j =0;j<player.length;j++){
 				//console.log(player[j].nombre, fila[0])
-				
+
 				//si el id de usuario cuadra con alguno player ya creado actualizamos
 				if(player[j].id == parseInt(fila[2])){
 					player[j].listo = parseInt(fila[3]);
@@ -257,11 +257,11 @@ function actualizaExitoP(dato){
 					player[j].angulo = parseFloat(fila[6]);
 					player[j].muerto = parseFloat(fila[7]);
 
-					banEncontrado=true;					
+					banEncontrado=true;
 					break;
 				}
 			}
-			
+
 			//si no cuadro, creamos uno nuevo
 			if(!banEncontrado){
 				var tmpPlayer = new Player(fila[0],parseInt(fila[2]),parseInt(fila[1]));
@@ -274,8 +274,8 @@ function actualizaExitoP(dato){
 			}
 		}
 	}
-	
-	
+
+
 	banBD = true;
 }
 
@@ -293,18 +293,18 @@ function CrearRecogibles(){
 				success:creacionR
 				//timeout:4000,
 				//error:problemaRecibe
-		     
+
 		     });
-		     
+
 		     function creacionR(){
 	     	   	for (var i = 0; i < cantidadRecogibles; i ++){
 					recogibles[i] = new Recogible(Math.random()*1648, Math.random()*1888);
 					recogibles[i].idRecogible=player[0].id *100+i;
 				}
 		     	bucleespera();
-		  
+
 				}
-    
+
 }
 
 function ActualizarRecogibles(){
@@ -319,32 +319,32 @@ function ActualizarRecogibles(){
 				success:ActualizarR
 				//timeout:4000,
 				//error:problemaRecibe
-		     
+
 		     });
-		     
+
 		     function ActualizarR(datos){
 		     	//var tempL=datos;
 		     	//console.log(tempL)
-		     	 
+
 		     	//var banEncontrado = false;
 				var datosR = datos.split(";");
 				for (var i = 0; i < datosR.length; i++){
 					var fila = datosR[i].split("|");
 					var tempD=Math.trunc(parseInt(fila[0])/100);
-					for(var j =0;j<recogibles.length;j++){	
+					for(var j =0;j<recogibles.length;j++){
 					//si el id de Usr == id del jugador principal
-					
+
 					//console.log(tempD)
-					
+
 							if(recogibles[j].idRecogible==parseInt(fila[0])){
 								recogibles[j].tipo = parseInt(fila[2]);
 								recogibles[j].posX = parseFloat(fila[3]);
 								recogibles[j].posY = parseFloat(fila[4]);
 								recogibles[j].idRecogible = parseInt(fila[0]);
 								recogibles[j].muerto = parseInt(fila[5]);
-								
+
 							}else{
-								
+
 								if(parseInt(fila[0])==recogibles[j].idRecogible){
 									recogibles[j].tipo = parseInt(fila[2]);
 									recogibles[j].posX = parseFloat(fila[3]);
@@ -352,18 +352,18 @@ function ActualizarRecogibles(){
 									recogibles[j].idRecogible = parseInt(fila[0]);
 									recogibles[j].muerto = parseInt(fila[5]);
 									}
-							}		
-							
+							}
+
 						}
-					
-			
+
+
 		     	//for(let j=0;j<30;j++){
 		     	//console.log(recogibles[j]);
 		     //}
 				}
-		     	
+
 		     }
-    
+
 }
 
 
@@ -381,11 +381,11 @@ function runChat(){
                success:exitoRecibe,
                timeout:4000,
                error:problemaRecibe
-             }); 
+             });
              $("#mensajes").scrollTop(1000000000)
         }
-        
-//Funciones Chat   
+
+//Funciones Chat
 function inicioEnvia(){}
 function exitoEnvia(){$("#nuevomensaje").val("")}
 function problemaEnvia(){}
@@ -418,4 +418,4 @@ function pintarHUD(){
                 ctxHUD.drawImage(spriteVida3,50,0);
             break;
         }
-    }
+    }*/

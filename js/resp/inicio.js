@@ -1,24 +1,24 @@
-function inicio(){
+function inicio(){/*
 		//console.log("inicio")
 	$( document ).ready(function() {
 		//condicionesInicialesEstrellas();//Cargamos Fondo Parallax
 		reescalaVentana();
 	});
 
-	
+
 	//controles();//Carga Controles
-	
-	
+
+
 	$(window).resize(function(){
 		reescalaVentana();
 	})
-	
+
 //Menu de Acceso de Usuario
  //Boton LogIn
 	$( "#idLogin" ).click(function() {
 		$("#inUsuario").val("")
 		$("#inContrasena").val("")
-		
+
 		$("#msgLogin").text("")
 		$( "#contenedorLogin" ).show();
 		$( "#contenedorSignin" ).hide();
@@ -29,17 +29,17 @@ function inicio(){
 	});
  //Boton SingIn
 	$( "#idSignin" ).click(function() {
-		
+
 		$("#inUsuario2").val("")
 		$("#inContrasena2").val("")
 		$("#inNombre").val("")
 		$("#inApellidos").val("")
-		
+
 		$( "#contenedorLogin" ).hide();
 		$( "#contenedorSignin" ).show();
 		//cambio RRDD
 		DibujarJugadorC();
-		
+
 		//Fin cambio RRDD
 	});
  //Boton Listo
@@ -70,7 +70,7 @@ function inicio(){
 			enviarAjaxSignin(usr,psw,nombre,apellidos);
 		}
 	});
-	
+
 
 //cambio RRDD 09/02/2019
  //Boton Seleccion Coches Derecha
@@ -85,8 +85,8 @@ function inicio(){
 	              contadorCochesFila2=0;
 	              contadorCoches=0;
 	          }
-	      }    
-	      DibujarJugadorC(); 
+	      }
+	      DibujarJugadorC();
 	});
  //Boton Seleccion Coches Izquierda
 	$("#Patras").click(function(){
@@ -101,10 +101,10 @@ function inicio(){
 	              contadorCoches=9;
 	          }
 	      }
-	      DibujarJugadorC(); 
+	      DibujarJugadorC();
 	});
-	
-//Boton enviar Chat	
+
+//Boton enviar Chat
 	$("#enviamensaje").click(function(){
                 $.ajax({
                    async:true,
@@ -120,24 +120,24 @@ function inicio(){
                  });
                    console.log("envio mensaje");
                 });
-      
-    
+
+
 //Boton Musica
 	var audio = new Audio("sound/Rampant.mp3")
   $("#musica").click(function(){
-                
+
                 audio.play();
-                
+
             })
 //Slider Musica
 	$("#slidervolumen").change(function(){
 	    if(!banAprender){
 	    	tiempo = $(this).val();
-	    	
+
 	    }
 	})
 
 
 //Fin cambio RRDD 09/02/2019
-
+*/
 }

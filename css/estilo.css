@@ -4,12 +4,12 @@ body{
 	overflow: hidden;
 	background-color:black;
 }
-#lienzoHud{
+/*#lienzoHud{
 	position:absolute;
 	z-index:999;
-	
+
 }
-	
+
 #contenedorInicio{
 	position:absolute;
 	top:0px;
@@ -25,14 +25,14 @@ body{
 	top:0%;
 	width: 150px;
 	height: 100%;
-	
+
 	color:white;
 	font-size: 15px;
-	
+
 	padding:20px;
-	
+
 	vertical-align: middle;
-	
+
 	z-index:998;
 	background-color:black;
 }
@@ -42,9 +42,9 @@ body{
 	width:150px;
 	display:block;
 	height:auto;
-	
+
 }
-.menuIzq:hover { 
+.menuIzq:hover {
   color: yellow;
 }
 
@@ -54,16 +54,16 @@ body{
 	top:0%;
 	width: 100%;
 	height: 100%;
-	
+
 	margin:0px;
 	padding:0px;
-	
+
 	background-image: url("../img/menu.jpg");
 	background-size:cover;
 	background-position:center 0px;
 	background-repeat:no-repeat;
-	/*background-position:calc(center - 75px) center;*/
-	
+	--background-position:calc(center - 75px) center;
+
 }
 #msgLogin{
 	color:red;
@@ -73,7 +73,7 @@ body{
 	position:absolute;
 	margin: 0px;
 	position: 0px;
-	
+
 }
 
 #lienzoAtaque{
@@ -88,8 +88,8 @@ body{
 #contenedorLienzos,
 #lienzoMini,
 #lienzoFondo,
-#lienzo,	
-#contenedorGanar,	
+#lienzo,
+#contenedorGanar,
 #contenedorLogo{
 	position:absolute;
 	overflow: hidden;
@@ -105,8 +105,8 @@ body{
 	width: 100%;
 	height: 100%;
 	background-color: transparent;
-	
-	
+
+
 
 }
 
@@ -114,17 +114,17 @@ body{
 	position: absolute;
 	left:50%;
 	top:50%;
-	
+
 	height: 210px;
 	width: 250px;
-	
+
 	margin:0px;
 	padding:0px;
-	
+
 	margin-top: -105px;
 	margin-left: -125px;
 	text-align: center;
-	
+
 	background-color: transparent;
 	display:none;
 }
@@ -133,17 +133,17 @@ body{
 	position: absolute;
 	left:50%;
 	top:50%;
-	
+
 	height: 300;
 	width: 250px;
-	
+
 	margin:0px;
 	padding:0px;
-	
+
 	margin-top: -150px;
 	margin-left: -125px;
 	text-align: center;
-	
+
 	background-color: transparent;
 	display:none;
 }
@@ -155,7 +155,7 @@ body{
 	left:25%;
 	position:absolute;
 	width: 50%;
-	
+
 }
 
 #contenedorFin,
@@ -169,14 +169,12 @@ body{
 #contenedorEventos{
 	position:absolute;
 	text-align: center;
-    border:2px solid black;   
+    border:2px solid black;
     border-radius: 15px;
 	top:10%;
 	left:65%;
 	width:30%;
 	height:40%;
-	/*width: 750px;
-	height: 650px;*/
 	background: rgb(255,255,255);
     margin:0px;
 
@@ -185,18 +183,16 @@ body{
 #contenedorChat{
 	position:absolute;
 	text-align: center;
-    border:2px solid black;   
+    border:2px solid black;
     border-radius: 50px;
 	top:55%;
 	left:65%;
 	width:30%;
 	height:50%;
-	/*width: 750px;
-	height: 650px;*/
 	background: rgb(255,255,255);
     margin:0px;
     padding: 50px;
-	
+
 }
 
 #chatMessage{
@@ -207,7 +203,7 @@ body{
 	padding: 50px;
 
 }
-	
+
 #mensajes{
 	width:100%;
 	height:100%;
@@ -222,14 +218,14 @@ body{
 #tunombre{
 	width:70%;
 	margin:auto;
-	
+
 }
 
 #lienzoPersonaje2{
     position:absolute;
     top:0px;
     left:0px;
-   
+
 }
 #TituloP2{
     font-size: 35px;
@@ -239,39 +235,39 @@ body{
 	top:0px;
     font-size: 35px;
     color:black;
-}	
+}
 
 
 #Patras{
     font-size: 25px;
     position: absolute;
-	
+
     text-align: center;
-    border:3px solid black; 
+    border:3px solid black;
     left:25%;
     top:25%;
-    
+
 }
 
 #Psiguiente{
     font-size: 25px;
     position: absolute;
-	
+
     text-align: center;
-    border:3px solid black; 
+    border:3px solid black;
     left:55%;
     top:25%;
-    
+
 }
 #btnListo{
     font-size: 18px;
     position: absolute;
-	
+
     text-align: center;
-    border:3px solid black; 
+    border:3px solid black;
     left:25%;
     top:60%;
-    
+
 }
 
 
@@ -297,13 +293,13 @@ body{
 #lgInicioItem{	border: 5px solid white;
 	font-weight: bold;
 	border-radius: 20px;
-     
+
 }
 
 #contenedorLista{
 	width:50%;
 	text-align:center;
-	
+
 }
 
 @media only screen and (max-width: 950px) {
@@ -313,12 +309,12 @@ body{
 		top:0%;
 		width: 100%;
 		height: auto;
-		
+
 		color:white;
 		font-size: 15px;
-		
+
 		padding:5px;
-		
+
 		z-index:998;
 		background-color:black;
 	}
@@ -328,16 +324,16 @@ body{
 		top:0%;
 		width: 100%;
 		height: 100%;
-		
+
 		margin:0px;
 		padding:0px;
-		
+
 		background-image: url("../img/menu.jpg");
 		background-size:cover;
 		background-position:center 0px;
 		background-repeat:no-repeat;
 	}
-	
+
 	.menuIzq{
 		position:relative;
 		padding:5px;
@@ -346,3 +342,4 @@ body{
 		height:auto;
 	}
 }
+*/
