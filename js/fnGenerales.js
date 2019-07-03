@@ -1,12 +1,10 @@
 function reescalaVentana(){
   ventana.actualizarTamanos();
-  console.log("reescalando");
-  ventana.ancho = window.innerWidth;
-	ventana.alto = window.innerHeight;
+  console.log(ventana.ancho,ventana.alto);
 
-	$(".cvMenu").attr("width",ventana.ancho);
+	$(".cvMenu").attr("width",ventana.ancho*.2);
 	$(".cvMenu").attr("height",ventana.alto);
-	$(".cvMain").attr("width",ventana.ancho);
+	$(".cvMain").attr("width",ventana.ancho*.8);
 	$(".cvMain").attr("height",ventana.alto);
 
 }
