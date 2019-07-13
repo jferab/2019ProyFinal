@@ -1,4 +1,4 @@
-function Ventana(){
+function IsoVentana(){
   //parametros
   this.ancho = window.innerWidth;
   this.alto =  window.innerHeight;

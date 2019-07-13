@@ -1,6 +1,6 @@
 $( document ).ready(function() {
-  reescalaVentana();
+  norVentana.reescalaVentana();
 });
 $( window ).resize(function() {
-  reescalaVentana();
+  norVentana.reescalaVentana();
 });
