@@ -22,6 +22,7 @@ function NorVentana(){
     $("#contenedorJuego").show();
     $("#contenedorJuegoMenu").show();
     $("#contenedorJuegoMain").show();
+    juegoBucle()
   }
   this.actualizarTamanos = function(){
     this.anchoMain = window.innerWidth * this.mainTamano;

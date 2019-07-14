@@ -4,6 +4,8 @@ function juegoBucle(){
   norJugador.mover();
   norJugador.dibujar(contextoJuego,norMapa);
 
+
+
   for (var x in norCiudad){
     norCiudad[x].colicion(norJugador);
     norCiudad[x].dibujar(contextoJuego,norMapa);

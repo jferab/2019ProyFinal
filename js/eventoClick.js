@@ -1,7 +1,7 @@
 
 $( "#btnMenuInicio" ).click(function() {
-  ventana.mostrarSelPersonaje();
+  norVentana.mostrarSelPersonaje();
 });
 $( "#btnSelPerInicio" ).click(function() {
-  ventana.mostrarJuego();
+  norVentana.mostrarJuego();
 });

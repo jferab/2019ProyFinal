@@ -11,7 +11,7 @@ var norVentana = new NorVentana();
 
 //Variables juego isometrico
 var isoImg = new IsoImagenes();
-//var isoJugador = new Jugador();
+var isoJugador = new IsoJugador();
 var isoMapa = new IsoMapa();
 //var isoVentana = new norVentana();*/
 
@@ -23,5 +23,3 @@ norCiudad[4] = new NorCiudad(500,500,30,"Ciudad 5");
 
 
 norVentana.mostrarJuego();
-
-juegoBucleBatalla()

@@ -1,33 +1,22 @@
 function IsoJugador(){
   //parametros
-  this.posX = 700;
-  this.posY = 700;
-  this.tamano = 10
-  this.ang= 0;
-  this.banMov = false;
-  this.banAngL = false;
-  this.banAngR = false;
-
-  var paso = 5;
+  this.x = 0;
+  this.y = 0;
+  this.ancho = 128;
+  this.alto = 160;
 
   //metodos
   this.mover = function() {
 
-    if(this.banAngL){this.ang-=0.1}
-    if(this.banAngR){this.ang+=0.1}
-    if(this.banMov){
-      this.posX += paso * Math.cos(this.ang);
-      this.posY += paso *  Math.sin(this.ang);
-      mapa.desfaseX -= paso * Math.cos(this.ang);
-      mapa.desfaseY -= paso * Math.sin(this.ang);
-    }
-
-
   }
-  this.dibujar = function(ctx) {
+  this.dibujar = function(ctx,img,mapa) {
+    var px= convIsoX(this.x*64,this.y*64);
+    var py= convIsoY(this.x*64,this.y*64);
+    ctx.drawImage(img.imgDragon,1*this.ancho,0*this.alto,this.ancho,this.alto,
+    px+mapa.desfaseX,py+mapa.desfaseY,this.ancho,this.alto);
     ctx.beginPath();
-    ctx.fillStyle = 'red';
-    ctx.arc(this.posX + mapa.desfaseX, this.posY + mapa.desfaseY, this.tamano, 0, 2 * Math.PI);
+    ctx.fillStyle = 'blue';
+    ctx.arc(px+mapa.desfaseX , py+mapa.desfaseY, this.tamano, 0, 2 * Math.PI);
     ctx.fill();
     ctx.closePath()
   }

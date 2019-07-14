@@ -1,6 +1,9 @@
 function IsoImagenes(){
   //parametros
-  this.imgFondo = new Image();
-  this.imgFondo.src = 'img/fondo.jpg'
+  this.imgPasto = new Image();
+  this.imgPasto.src = 'img/grass1.png'
+
+  this.imgDragon = new Image();
+  this.imgDragon.src = 'img/sheetDragon.png'
 
 }
