@@ -41,7 +41,22 @@ function Stats()
       return this.diferencia;
     }
   }
-  console.log("Ataque:", Ataque(true, 5, 2), "Defensa:", Defensa(true, 2, 2));
-  console.log("Daño:", Daño(Ataque(true, 5, 2), Defensa(true, 2, 2)));
+
+  this.Precision = function(precisionObjeto)                                    //Funcion acierto en base a la precisión
+  {
+    this.precision = Math.floor(precisionObjeto + Math.random()*1);
+    //console.log(this.precision);
+    if(this.precision >= 1)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  //console.log("Ataque:", Ataque(true, 5, 2), "Defensa:", Defensa(true, 2, 2));
+  //console.log("Daño:", Daño(Ataque(true, 5, 2), Defensa(true, 2, 2)));
+  //console.log("Precision:", Precision(0.5));
 }
 Stats();
