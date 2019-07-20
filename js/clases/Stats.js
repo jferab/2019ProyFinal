@@ -41,7 +41,7 @@ function Stats()
       return this.diferencia;
     }
   }
-//console.log(Ataque(true, 5, 2), Defensa(true, 2, 2));
-//console.log(Daño(Ataque(true, 5, 2), Defensa(true, 2, 2)));
+  console.log("Ataque:", Ataque(true, 5, 2), "Defensa:", Defensa(true, 2, 2));
+  console.log("Daño:", Daño(Ataque(true, 5, 2), Defensa(true, 2, 2)));
 }
 Stats();
