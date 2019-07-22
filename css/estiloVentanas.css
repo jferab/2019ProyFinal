@@ -1,15 +1,18 @@
+.ventana{
+	position: absolute;
+	left:10%;
+	top:10%;
+	width: 80%;
+	margin:0px;
+	padding:0px;
+}
 
-
-/*div{
+div{
 	display: none;
-}*/
+}
 
-#contenedorDificultad,
-#contenedorInicio,
-#contenedorSelPersonaje
-#contenedorJuegoMenu,
-#contenedorJuegoMain{
-	display: none;
+.lgContenido{
+	justify-content: center;
 }
 
 .juegoMain{

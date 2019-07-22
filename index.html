@@ -4,8 +4,9 @@
 		<title>Proy Final</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<link rel="Stylesheet" href="css/estilo.css">
 		<link rel="Stylesheet" href="css/estiloVentanas.css">
@@ -27,17 +28,16 @@
 					</li>
 				</ul>
 			</div>
-			<div id="contenedorSelPersonaje" class="modal open" style="width:80%;height:80%;top:10%" >
-							<h2>Seleccioanr Personaje</h2>
-								<div id="carrusel" class="carousel" style="width:80%;height:50%">
-									<a class="carousel-item active" href="#one!"><img src="img/envIso/Flower1.png"></a>
-									<a class="carousel-item" href="#two!"><img src="img/envIso/Flower2.png"></a>
-									<a class="carousel-item" href="#three!"><img src="img/envIso/Flower3.png"></a>
-								</div>
-
+			<div id="contenedorSelPersonaje" class="ventana">
+				<ul class="list-group" id="lgSelPers" >
+					<center>
+						<li class="list-group-item" id="lgSelPersItem" >
+							<h2>Seleccioanr Personaje</h2><br><br>
 							<input type="text" id="selPerNombreUsuario" placeholder="Nombre del personaje"></input><br>
 							<button id="btnSelPerInicio" type="button" class="btn btn-danger">Inicio</button><br><br>
-
+						</li>
+					</center>
+				</ul>
 			</div>
 		</div>
 		<!-- *********** Juego *********** -->
@@ -68,8 +68,6 @@
 			</div>
 		</div>
 
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script src="js/clases/Configuracion.js"></script>
 		<script src="js/clases/IsoImagenes.js"></script>
 		<script src="js/clases/IsoJugador.js"></script>

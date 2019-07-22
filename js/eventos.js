@@ -1,8 +1,5 @@
-$( document ).ready(function() {  // Plugin initialization
-  $('.carousel').carousel();
+$( document ).ready(function() {
   norVentana.reescalaVentana();
-
-
 });
 $( window ).resize(function() {
   norVentana.reescalaVentana();

@@ -8,23 +8,14 @@ function NorVentana(){
 
   //metodos
   this.mostrarInicio = function() {
-    //$("div").hide();
-    $("#contenedorDificultad").hide();
-    $("#contenedorInicio").hide();
-    $("#contenedorSelPersonaje").hide();
+    $("div").hide();
     $("#contenedorInicio").show();
     $("#contenedorMenu").show();
   }
   this.mostrarSelPersonaje = function() {
-    //$("div").hide();
-    $("#contenedorDificultad").hide();
-    $("#contenedorInicio").hide();
-    $("#contenedorMenu").hide();
+    $("div").hide();
     $("#contenedorInicio").show();
     $("#contenedorSelPersonaje").show();
-
-
-    $("#carrusel").show();
   }
   this.mostrarJuego = function() {
     $("div").hide();
