@@ -8,17 +8,31 @@ function NorVentana(){
 
   //metodos
   this.mostrarInicio = function() {
-    $("div").hide();
+
+
+    $("#contenedorJuego").hide();
+    $("#contenedorVentanas").hide();
+    $("#contenedorInicio").hide();
+    $("#contenedorSelPersonaje").hide();
     $("#contenedorInicio").show();
     $("#contenedorMenu").show();
   }
   this.mostrarSelPersonaje = function() {
-    $("div").hide();
+    //$("div").hide();
+    $("#contenedorJuego").hide();
+    $("#contenedorVentanas").hide();
+    $("#contenedorInicio").hide();
+    $("#contenedorMenu").hide();
     $("#contenedorInicio").show();
     $("#contenedorSelPersonaje").show();
+    /*$(".carousel").show();
+    $(".carousel-inner").show();
+    $(".carousel-item").show();*/
   }
   this.mostrarJuego = function() {
-    $("div").hide();
+    $("#contenedorVentanas").hide();
+    $("#contenedorInicio").hide();
+    $("#contenedorSelPersonaje").hide();
     $("#contenedorJuego").show();
     $("#contenedorJuegoMenu").show();
     $("#contenedorJuegoMain").show();

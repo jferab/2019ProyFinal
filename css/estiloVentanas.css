@@ -6,10 +6,10 @@
 	margin:0px;
 	padding:0px;
 }
-
+/*
 div{
 	display: none;
-}
+}*/
 
 .lgContenido{
 	justify-content: center;
@@ -32,4 +32,17 @@ div{
 	margin:0px;
 	padding:0px;
 	border: 1px solid white;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 40px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 40px;
+  color: red;
 }

@@ -22,4 +22,4 @@ norCiudad[3] = new NorCiudad(500,100,30,"Ciudad 4");
 norCiudad[4] = new NorCiudad(500,500,30,"Ciudad 5");
 
 
-norVentana.mostrarJuego();
+norVentana.mostrarSelPersonaje();

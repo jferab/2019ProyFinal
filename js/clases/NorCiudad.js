@@ -5,6 +5,7 @@ function NorCiudad(px,py,tam,nombre){
   this.posX = 0;
   this.posY = 0;
   this.tamano = 0;
+  this.imgAjuste = 2;
 
 
   this.crear = function (px,py,tam,nombre) {
@@ -32,12 +33,14 @@ function NorCiudad(px,py,tam,nombre){
     if(dist<=0){console.log(this.nombre, "Colicion");}
   }
 
-  this.dibujar = function(ctx,mapa) {
+  this.dibujar = function(ctx,mapa,img) {
+
     ctx.beginPath();
     ctx.fillStyle = 'blue';
     ctx.arc(this.posX + mapa.desfaseX, this.posY + mapa.desfaseY, this.tamano, 0, 2 * Math.PI);
     ctx.fill();
     ctx.closePath()
+    drawRotated(ctx, img.imgCiudad, this.ang+Math.PI, this.posX + mapa.desfaseX, this.posY + mapa.desfaseY, this.tamano*this.imgAjuste, this.tamano*this.imgAjuste)
   }
 
   //Constructor

@@ -7,6 +7,7 @@ function NorJugador(){
   this.banMov = false;
   this.banAngL = false;
   this.banAngR = false;
+  this.imgAjuste = 2;
 
   var paso = 5;
 
@@ -24,12 +25,13 @@ function NorJugador(){
 
 
   }
-  this.dibujar = function(ctx,mapa) {
+  this.dibujar = function(ctx,mapa,img) {
     ctx.beginPath();
     ctx.fillStyle = 'red';
     ctx.arc(this.posX + mapa.desfaseX, this.posY + mapa.desfaseY, this.tamano, 0, 2 * Math.PI);
     ctx.fill();
     ctx.closePath()
+    drawRotated(ctx, img.imgPersonaje, this.ang+Math.PI, this.posX + mapa.desfaseX, this.posY + mapa.desfaseY, this.tamano*this.imgAjuste, this.tamano*this.imgAjuste)
   }
 
 }

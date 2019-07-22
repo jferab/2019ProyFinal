@@ -1,14 +1,12 @@
 function juegoBucle(){
   var banPelear = false;
   norMapa.mostrarFondo(contextoJuego,norImg);
-  norJugador.mover();
-  norJugador.dibujar(contextoJuego,norMapa);
 
 
 
   for (var x in norCiudad){
     norCiudad[x].colicion(norJugador);
-    norCiudad[x].dibujar(contextoJuego,norMapa);
+    norCiudad[x].dibujar(contextoJuego,norMapa,norImg);
   }
 
   //Colicion de enemigos
@@ -27,6 +25,9 @@ function juegoBucle(){
   for(var x=norEnemigo.length;x<10;x++){
     norEnemigo[x] = new NorEnemigo(norJugador);
   }
+
+  norJugador.mover();
+  norJugador.dibujar(contextoJuego,norMapa,norImg);
 
   if(banPelear){
     juegoBucleBatalla();
