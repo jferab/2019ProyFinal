@@ -45,7 +45,7 @@ function Stats()
   this.Precision = function(precisionObjeto)                                    //Funcion acierto en base a la precisión
   {
     this.precision = Math.floor(precisionObjeto + Math.random()*1);
-    //console.log(this.precision);
+    
     if(this.precision >= 1)
     {
       return true;
