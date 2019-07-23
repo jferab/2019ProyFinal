@@ -57,7 +57,10 @@
 		<!-- *********** Ventanas *********** -->
 		<div id="contenedorVentanas" >
 			<div id="contenedorStats" class="ventana"></div>
-			<div id="contenedorMochila" class="ventana"></div>
+			<div id="contenedorMochila" >
+			<canvas id="ventanaMochila" width=1100px height=1000px></canvas>
+			<button id="atrasMochila" type="button" class="btn btn-success">Salir</button><br>
+			</div>
 			<div id="contenedorMapa" class="ventana"></div>
 			<div id="contenedorDialogos" class="ventana"></div>
 			<div id="contenedorDificultad" class="ventana">
@@ -79,6 +82,7 @@
 		<script src="js/clases/NorEnemigo.js"></script>
 		<script src="js/clases/NorMapa.js"></script>
 		<script src="js/clases/NorVentana.js"></script>
+		<script src="js/clases/Mochila.js"></script>
 		<script src="lib/rotatecanvas.js"></script>
 
 		<script src="js/fnIsometrico.js"></script>

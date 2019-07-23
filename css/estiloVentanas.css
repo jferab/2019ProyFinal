@@ -33,3 +33,42 @@ div{
 	padding:0px;
 	border: 1px solid white;
 }
+
+.ventanaMochila{
+	position: absolute;
+	left:500px;
+	top:500px;
+	width: 300px;
+	height:300px;
+	margin:0px;
+	padding:0px;
+	border: 1px solid white;
+}
+#contenedorVentanas{
+	position: absolute;
+	left:0%;
+	top:0%;
+	width: 80%;
+	margin:0px;
+	padding:0px;
+	border: 1px solid white;
+}
+#contenedorMochila{
+	position: absolute;
+	left:0%;
+	top:0%;
+	width: 80%;
+	margin:0px;
+	padding:0px;
+	border: 1px solid white;
+}
+#atrasMochila{
+    font-size: 25px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:134%;
+    top:56%;
+    
+}
