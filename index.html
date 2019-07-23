@@ -30,16 +30,17 @@
 					<center>
 						<li class="list-group-item" id="lgSelPersItem" >
 							<h2>Seleccioanr Personaje</h2><br><br>
+							<div id="selPerError"></div>
 
 							<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
   							<div class="carousel-inner">
-							    <div class="carousel-item active">
+							    <div id="dimg1" class="carousel-item active">
 							      <img class="d-block w-25" src="img/envIso/Flower1.jpg" >
 							    </div>
-							    <div class="carousel-item">
+							    <div id="dimg2" class="carousel-item">
 							      <img class="d-block w-25" src="img/envIso/Flower2.jpg" >
 							    </div>
-							    <div class="carousel-item">
+							    <div id="dimg3" class="carousel-item">
 							      <img class="d-block w-25" src="img/envIso/Flower3.jpg" >
 							    </div>
 
@@ -53,7 +54,7 @@
 								  </a>
 							  </div>
 							</div>
-							<input type="text" id="selPerNombreUsuario" placeholder="Nombre del personaje"></input><br>
+							<input type="text" id="selPerNombreUsuario" placeholder="Nombre del personaje"></input><br><br>
 							<button id="btnSelPerInicio" type="button" class="btn btn-danger">Inicio</button><br><br>
 						</li>
 					</center>
@@ -81,10 +82,16 @@
 			<div id="contenedorMapa" class="ventana"></div>
 			<div id="contenedorDialogos" class="ventana"></div>
 			<div id="contenedorDificultad" class="ventana">
-				<h2>Dificultad</h2><br><br>
-				<button id="btnDificultadFacil" type="button" class="btn btn-danger">Facil</button><br><br>
-				<button id="btnDificultadNormal" type="button" class="btn btn-danger">Normal</button><br><br>
-				<button id="btnDificultadDificil" type="button" class="btn btn-danger">Dificil</button><br><br>
+				<ul class="list-group"  >
+					<li class="list-group-item" >
+						<center>
+							<h2>Dificultad</h2><br><br>
+							<button id="btnDificultadFacil" type="button" class="btn btn-danger">Facil</button><br><br>
+							<button id="btnDificultadNormal" type="button" class="btn btn-danger">Normal</button><br><br>
+							<button id="btnDificultadDificil" type="button" class="btn btn-danger">Dificil</button><br><br>
+						</center>
+					</li>
+				</ul>
 			</div>
 		</div>
 

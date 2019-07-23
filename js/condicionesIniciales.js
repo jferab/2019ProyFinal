@@ -8,6 +8,7 @@ var norImg = new NorImagenes();
 var norJugador = new NorJugador();
 var norMapa = new NorMapa();
 var norVentana = new NorVentana();
+var config = new Configuracion();
 
 //Variables juego isometrico
 var isoImg = new IsoImagenes();
@@ -22,4 +23,4 @@ norCiudad[3] = new NorCiudad(500,100,30,"Ciudad 4");
 norCiudad[4] = new NorCiudad(500,500,30,"Ciudad 5");
 
 
-norVentana.mostrarSelPersonaje();
+norVentana.mostrarInicio();

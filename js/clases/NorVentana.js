@@ -53,5 +53,8 @@ function NorVentana(){
   	$(".cvMenu").attr("height",this.altoMenu);
 
   }
-
+  this.mostrarMenuDificultad = function(){
+    $("#contenedorInicio").hide();
+    $("#contenedorVentanas").show();
+  }
 }

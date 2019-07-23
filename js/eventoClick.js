@@ -3,26 +3,29 @@ $( "#btnMenuInicio" ).click(function() {
   norVentana.mostrarSelPersonaje();
 });
 $( "#btnSelPerInicio" ).click(function() {
-  norVentana.mostrarJuego();
-});
-/*
-function ajustarCarousel(){
-
-  if($( "#dimg1" ).hasClass( "active" )){
-    console.log("img 1");
-    $( "#img1" ).show( );
-    $( "#img2" ).hide( );
-    $( "#img3" ).hide( );
-  }else if($( "#dimg2" ).hasClass( "active" )){
-    console.log("img 2");
-    $( "#img1" ).hide( );
-    $( "#img3" ).hide( );
-    $( "#img2" ).show( );
-  } else if($( "#dimg3" ).hasClass( "active" )){
-    console.log("img 3");
-    $( "#img1" ).hide( );
-    $( "#img2" ).hide( );
-    $( "#img3" ).show( );
+  if(config.asignarPersonaje()){
+    norVentana.mostrarJuego();
+  }else{
+    $( "#selPerError" ).html("Error de usuario")
   }
-}*/
+});
+$( "#btnMenuDificultad" ).click(function() {
+  norVentana.mostrarMenuDificultad();
+});
+
+$( "#btnDificultadFacil" ).click(function() {
+  config.asignarDificultad(0);
+  norVentana.mostrarInicio();
+});
+$( "#btnDificultadNormal" ).click(function() {
+  config.asignarDificultad(1);
+  norVentana.mostrarInicio();
+});
+$( "#btnDificultadDificil" ).click(function() {
+  config.asignarDificultad(2);
+  norVentana.mostrarInicio();
+});
+
+
+
 $('.carousel').carousel()

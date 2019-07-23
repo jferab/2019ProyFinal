@@ -27,7 +27,14 @@ function NorJugador(){
   }
   this.dibujar = function(ctx,mapa,img) {
     ctx.beginPath();
-    ctx.fillStyle = 'red';
+    switch (config.personaje) {
+      case 1: ctx.fillStyle = 'grey'; break;
+      case 2: ctx.fillStyle = 'blue'; break;
+      case 3: ctx.fillStyle = 'red'; break;
+      default: ctx.fillStyle = 'white';
+
+    }
+
     ctx.arc(this.posX + mapa.desfaseX, this.posY + mapa.desfaseY, this.tamano, 0, 2 * Math.PI);
     ctx.fill();
     ctx.closePath()
