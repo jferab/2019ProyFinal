@@ -1,5 +1,5 @@
 function juegoBucle(){
-  var banPelear = false;
+  var banPelear = true;
   norMapa.mostrarFondo(contextoJuego,norImg);
 
 
