@@ -26,6 +26,15 @@ $( "#btnDificultadDificil" ).click(function() {
   norVentana.mostrarInicio();
 });
 
+//$( "#juegoMain" ).mousemove(function(e) {
+$( "#juegoMain" ).click(function(e) {
+  isoMapa.asignarSelPos(e.clientX,e.clientY)
+});
+$( "#juegoMain" ).mousemove(function(e) {
+  isoMapa.asignarSelPos(e.clientX,e.clientY)
+  isoMapa.asignarDesfase(e.clientX,e.clientY,norVentana)
+
+});
 
 
 $('.carousel').carousel()

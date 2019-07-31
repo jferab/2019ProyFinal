@@ -27,5 +27,5 @@ function IsoJugador(){
     ctx.fill();
     ctx.closePath()
   }
-
+  
 }

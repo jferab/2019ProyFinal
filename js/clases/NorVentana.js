@@ -57,4 +57,10 @@ function NorVentana(){
     $("#contenedorInicio").hide();
     $("#contenedorVentanas").show();
   }
+
+
+  this.borrarTodo = function(ctx){
+    ctx.clearRect(0,0,this.anchoMain,this.altoMain);
+
+  }
 }

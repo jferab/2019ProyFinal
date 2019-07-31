@@ -4,6 +4,8 @@ function IsoMapa(){
   this.desfaseY = 30;
   this.maxCuad = 24;
   this.longCuad = 32;
+  this.selPosX = 0;
+  this.selPosY = 0;
 
   this.dibujarCuadricula = function(ctx){
     var px = 0;
@@ -58,11 +60,77 @@ function IsoMapa(){
       }
     }
   }
+  this.dibujarSelector = function(ctx) {
+
+    ctx.strokeStyle ="yellow";
+
+    //Linea 1
+    ctx.beginPath();
+    px = convIsoX((this.selPosX )*this.longCuad,(this.selPosY +1)*this.longCuad);
+    py = convIsoY((this.selPosX )*this.longCuad,(this.selPosY +1)*this.longCuad);
+    ctx.moveTo(  px +this.desfaseX,  py+this.desfaseY);
+    px = convIsoX((this.selPosX )*this.longCuad,(this.selPosY )*this.longCuad);
+    py = convIsoY((this.selPosX )*this.longCuad,(this.selPosY )*this.longCuad);
+    ctx.lineTo( px +this.desfaseX, py +this.desfaseY);
+    ctx.stroke();
+    ctx.closePath();
+
+    //px = convIsoX( , );
+
+    //Linea2
+    ctx.beginPath();
+    px = convIsoX((this.selPosX +1)*this.longCuad , (this.selPosY )*this.longCuad);
+    py = convIsoY((this.selPosX +1)*this.longCuad , (this.selPosY )*this.longCuad);
+    ctx.moveTo( px +this.desfaseX, py +this.desfaseY);
+    px = convIsoX((this.selPosX )*this.longCuad , (this.selPosY )*this.longCuad );
+    py = convIsoY((this.selPosX )*this.longCuad , (this.selPosY )*this.longCuad );
+    ctx.lineTo( px +this.desfaseX, py +this.desfaseY);
+    ctx.stroke();
+    ctx.closePath();
+
+    //Linea 3
+    ctx.beginPath();
+    px = convIsoX((this.selPosX +1)*this.longCuad , (this.selPosY )*this.longCuad);
+    py = convIsoY((this.selPosX +1)*this.longCuad , (this.selPosY )*this.longCuad);
+    ctx.moveTo( px +this.desfaseX, py+this.desfaseY);
+    px = convIsoX( (this.selPosX +1)*this.longCuad, (this.selPosY +1)*this.longCuad );
+    py = convIsoY( (this.selPosX +1)*this.longCuad, (this.selPosY +1)*this.longCuad );
+    ctx.lineTo( px +this.desfaseX, py+this.desfaseY);
+    ctx.stroke();
+    ctx.beginPath();
+
+    //Linea 4
+    ctx.closePath();
+    px = convIsoX((this.selPosX )*this.longCuad , (this.selPosY +1)*this.longCuad);
+    py = convIsoY((this.selPosX )*this.longCuad , (this.selPosY +1)*this.longCuad);
+    ctx.moveTo( px +this.desfaseX, py+this.desfaseY);
+    px = convIsoX((this.selPosX +1)*this.longCuad , (this.selPosY +1)*this.longCuad );
+    py = convIsoY((this.selPosX +1)*this.longCuad , (this.selPosY +1)*this.longCuad );
+    ctx.lineTo( px   +this.desfaseX,  py +this.desfaseY);
+    ctx.stroke();
+    ctx.closePath();
+  }
 
   this.mostrarFondo = function(ctx,img) {
     this.dibujarImagenFondo(ctx,img);
     this.dibujarCuadricula(ctx);
 
+
+  }
+
+  this.asignarSelPos = function(px,py){
+      var dpx = dconvIsoX( (px-this.desfaseX)/this.longCuad, (py-this.desfaseY)/this.longCuad);
+      var dpy = dconvIsoY( (px-this.desfaseX)/this.longCuad, (py-this.desfaseY)/this.longCuad);
+      this.selPosX = parseInt(dpx);
+      this.selPosY = parseInt(dpy) ;
+  }
+  this.asignarDesfase = function(px,py,ventana){
+    //console.log(px , ventana.anchoMain*.1);
+    var vel = 5;
+    if(px <= ventana.anchoMain*.1){this.desfaseX +=vel };
+    if(px >= ventana.anchoMain*.9){this.desfaseX -=vel };
+    if(py <= ventana.altoMain*.1){this.desfaseY +=vel };
+    if(py >= ventana.altoMain*.9){this.desfaseY -=vel };
 
   }
 }
