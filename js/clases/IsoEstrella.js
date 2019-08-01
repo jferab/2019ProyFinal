@@ -28,9 +28,13 @@ function IsoEstrella(){
     this.buscarVecinos(this.actual,destino);
     this.selVecino();
     //if(this.nuevo != destino){
-    console.log("nuevo",this.nuevo);
-    if(this.nuevo != "1a3"){
+    if(this.nuevo != destino){
       this.buscarCamino(this.nuevo, destino)
+    }else{
+      this.listaCerrada[destino] = this.listaAbierta[destino];
+      delete this.listaAbierta[destino]
+
+      this.mostrarCamino(destino);
     }
 
   }
@@ -42,7 +46,7 @@ function IsoEstrella(){
     return g + h;
   }
   this.calcularG = function(x,y,dx,dy){
-    console.log(x,y,dx,dy);
+    //console.log(x,y,dx,dy);
     return  (Math.sqrt(Math.pow((x - dx),2)
     + Math.pow((y - dy),2)))*10;
   }
@@ -79,31 +83,40 @@ function IsoEstrella(){
     var y = parseInt(actual.split("a")[1])
 
     var id = x+"a"+y;
+    var padre = this.listaCerrada[id].padre;
     var val ={};
-
+    //console.log("estoy en: "+id);
     for(i=-1;i<=1;i++){
       var tx = x+i;
-      if(tx<=0){continue}
+      if( tx<=0) {continue}
+      if( tx>=8) {continue}
       for(j=-1;j<=1;j++){
         var ty = y+j;
         if(ty<=0){continue}
+        if(ty>=8){continue}
         tid = tx+"a"+ty;
         if(id!=tid ){
           val = this.insListaAbierta(tid,destino,actual);
           if(val != {} ){
-            if (this.listaAbierta.hasOwnProperty(tid)) {
-              //buscamos mas corto
-              var a = this.irPadre(tid)
-              var b1 = this.irPadre(actual)
-              var b2 = val.g;
-              var b = b1 + b2;
-              if(a<b){
-                delete this.listaAbierta[tid];
-                this.listaAbierta[tid] = val;
+
+            if(padre != tid){
+              if (this.listaAbierta.hasOwnProperty(tid)) {
+                //buscamos mas corto
+                var a = this.irPadre(tid)
+                var b1 = this.irPadre(actual)
+
+                var b2 = val.g;
+                var b = b1 + b2;
+                //console.log("comparar "+tid+": "+a, "con "+actual+":"+b);
+                if(a>b){
+                  delete this.listaAbierta[tid];
+                  this.listaAbierta[tid] = val;
+                }
+              }else{
+                if (!this.listaCerrada.hasOwnProperty(tid)) {
+                  this.listaAbierta[tid] = val;
+                }
               }
-              console.log("ir a padre",a,b1, b2);
-            }else{
-              this.listaAbierta[tid] = val;
             }
           }
         }
@@ -124,17 +137,26 @@ function IsoEstrella(){
 
   }
   this.irPadre = function(id){
-    console.log(id);
     var gPadre = 0
     var padre ="";
     if(this.listaAbierta.hasOwnProperty(id)){
       gPadre = this.listaAbierta[id].g;
-      padre =  this.listaAbierta[id].g;
+      padre =  this.listaAbierta[id].padre;
+    }
+    if(this.listaCerrada.hasOwnProperty(id)){
+      gPadre = this.listaCerrada[id].g;
+      padre =  this.listaCerrada[id].padre;
     }
     if (padre == id) {
       return 0;
     }else{
       return this.irPadre(padre) + gPadre;
     }
+  }
+  this.mostrarCamino = function(id){
+    if(this.listaCerrada[id].padre!= id){
+      this.mostrarCamino(this.listaCerrada[id].padre);
+    }
+    console.log(id);
   }
 }
