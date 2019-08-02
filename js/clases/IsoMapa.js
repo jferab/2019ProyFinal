@@ -32,7 +32,7 @@ function IsoMapa(){
       ctx.stroke();
       ctx.closePath();
     }
-
+/*
     ctx.fillStyle="red";
     for (var i=0;i<this.maxCuad;i++) {
       for (var j=0;j<this.maxCuad;j++) {
@@ -46,7 +46,7 @@ function IsoMapa(){
         ctx.closePath();
 
       }
-    }
+    }*/
   }
 
   this.dibujarImagenFondo = function(ctx,img) {
@@ -60,17 +60,38 @@ function IsoMapa(){
       }
     }
   }
-  this.dibujarSelector = function(ctx) {
 
+  this.calcularSelector = function(ctx) {
+    var est = new IsoEstrella();
+    est.inicializar();
+    var origen = isoJugador.x +"a"+ isoJugador.y;
+    var destino = this.selPosX +"a"+ this.selPosY;
+    //console.log(origen,destino);
+    if (this.selPosX > 0 && this.selPosX < 24  ){
+      if (this.selPosY >0 && this.selPosY <= this.maxCuad){
+        est.buscarCamino(origen,destino)
+        //console.log(est.camino);
+        for(var x in est.camino){
+          this.dibujarSelector(ctx,est.camino[x]);
+        }
+      }
+    }
+
+  }
+  this.dibujarSelector = function(ctx,pos) {
+    var x = parseInt(pos.split("a")[0]);
+    var y = parseInt(pos.split("a")[1]);
     ctx.strokeStyle ="yellow";
+
+
 
     //Linea 1
     ctx.beginPath();
-    px = convIsoX((this.selPosX )*this.longCuad,(this.selPosY +1)*this.longCuad);
-    py = convIsoY((this.selPosX )*this.longCuad,(this.selPosY +1)*this.longCuad);
+    px = convIsoX((x )*this.longCuad,(y +1)*this.longCuad);
+    py = convIsoY((x )*this.longCuad,(y +1)*this.longCuad);
     ctx.moveTo(  px +this.desfaseX,  py+this.desfaseY);
-    px = convIsoX((this.selPosX )*this.longCuad,(this.selPosY )*this.longCuad);
-    py = convIsoY((this.selPosX )*this.longCuad,(this.selPosY )*this.longCuad);
+    px = convIsoX((x )*this.longCuad,(y )*this.longCuad);
+    py = convIsoY((x )*this.longCuad,(y )*this.longCuad);
     ctx.lineTo( px +this.desfaseX, py +this.desfaseY);
     ctx.stroke();
     ctx.closePath();
@@ -79,33 +100,33 @@ function IsoMapa(){
 
     //Linea2
     ctx.beginPath();
-    px = convIsoX((this.selPosX +1)*this.longCuad , (this.selPosY )*this.longCuad);
-    py = convIsoY((this.selPosX +1)*this.longCuad , (this.selPosY )*this.longCuad);
+    px = convIsoX((x +1)*this.longCuad , (y )*this.longCuad);
+    py = convIsoY((x +1)*this.longCuad , (y )*this.longCuad);
     ctx.moveTo( px +this.desfaseX, py +this.desfaseY);
-    px = convIsoX((this.selPosX )*this.longCuad , (this.selPosY )*this.longCuad );
-    py = convIsoY((this.selPosX )*this.longCuad , (this.selPosY )*this.longCuad );
+    px = convIsoX((x )*this.longCuad , (y )*this.longCuad );
+    py = convIsoY((x )*this.longCuad , (y )*this.longCuad );
     ctx.lineTo( px +this.desfaseX, py +this.desfaseY);
     ctx.stroke();
     ctx.closePath();
 
     //Linea 3
     ctx.beginPath();
-    px = convIsoX((this.selPosX +1)*this.longCuad , (this.selPosY )*this.longCuad);
-    py = convIsoY((this.selPosX +1)*this.longCuad , (this.selPosY )*this.longCuad);
+    px = convIsoX((x +1)*this.longCuad , (y )*this.longCuad);
+    py = convIsoY((x +1)*this.longCuad , (y )*this.longCuad);
     ctx.moveTo( px +this.desfaseX, py+this.desfaseY);
-    px = convIsoX( (this.selPosX +1)*this.longCuad, (this.selPosY +1)*this.longCuad );
-    py = convIsoY( (this.selPosX +1)*this.longCuad, (this.selPosY +1)*this.longCuad );
+    px = convIsoX( (x +1)*this.longCuad, (y +1)*this.longCuad );
+    py = convIsoY( (x +1)*this.longCuad, (y +1)*this.longCuad );
     ctx.lineTo( px +this.desfaseX, py+this.desfaseY);
     ctx.stroke();
     ctx.beginPath();
 
     //Linea 4
     ctx.closePath();
-    px = convIsoX((this.selPosX )*this.longCuad , (this.selPosY +1)*this.longCuad);
-    py = convIsoY((this.selPosX )*this.longCuad , (this.selPosY +1)*this.longCuad);
+    px = convIsoX((x )*this.longCuad , (y +1)*this.longCuad);
+    py = convIsoY((x )*this.longCuad , (y +1)*this.longCuad);
     ctx.moveTo( px +this.desfaseX, py+this.desfaseY);
-    px = convIsoX((this.selPosX +1)*this.longCuad , (this.selPosY +1)*this.longCuad );
-    py = convIsoY((this.selPosX +1)*this.longCuad , (this.selPosY +1)*this.longCuad );
+    px = convIsoX((x +1)*this.longCuad , (y +1)*this.longCuad );
+    py = convIsoY((x +1)*this.longCuad , (y +1)*this.longCuad );
     ctx.lineTo( px   +this.desfaseX,  py +this.desfaseY);
     ctx.stroke();
     ctx.closePath();

@@ -15,8 +15,27 @@ function IsoEstrella(){
   this.listaAbierta = {};
   this.listaCerrada = {};
 
+  this.camino = new Array();
+
 
   //metodos
+  this.inicializar = function() {
+    this.origen = "";
+    this.destino = "";
+    this.arr ={};
+
+    this.f = -1;
+    this.g = -1;
+    this.h = -1;
+
+    this.actual = "";
+    this.nuevo = "";
+    this.vecinos = {}
+
+    this.listaAbierta = {};
+    this.listaCerrada = {};
+  }
+
   this.buscarCamino = function(origen, destino) {
     if (this.nuevo == ""){
       this.listaAbierta[origen] = this.insListaAbierta(origen,destino,origen);
@@ -33,7 +52,7 @@ function IsoEstrella(){
     }else{
       this.listaCerrada[destino] = this.listaAbierta[destino];
       delete this.listaAbierta[destino]
-
+      this.camino = new Array();
       this.mostrarCamino(destino);
     }
 
@@ -88,12 +107,11 @@ function IsoEstrella(){
     //console.log("estoy en: "+id);
     for(i=-1;i<=1;i++){
       var tx = x+i;
-      if( tx<=0) {continue}
-      if( tx>=8) {continue}
+      if( tx<=0 || tx>24) {continue}
+
       for(j=-1;j<=1;j++){
         var ty = y+j;
-        if(ty<=0){continue}
-        if(ty>=8){continue}
+        if( tx<=0 || tx>24) {continue}
         tid = tx+"a"+ty;
         if(id!=tid ){
           val = this.insListaAbierta(tid,destino,actual);
@@ -157,6 +175,6 @@ function IsoEstrella(){
     if(this.listaCerrada[id].padre!= id){
       this.mostrarCamino(this.listaCerrada[id].padre);
     }
-    console.log(id);
+    this.camino.push(id)
   }
 }

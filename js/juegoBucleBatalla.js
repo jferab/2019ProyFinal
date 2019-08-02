@@ -4,7 +4,7 @@ function juegoBucleBatalla(){
   isoJugador.dibujar(contextoJuego,isoImg,isoMapa);
 
   
-  isoMapa.dibujarSelector(contextoJuego);
+  isoMapa.calcularSelector(contextoJuego);
 
   setTimeout(juegoBucleBatalla,60);
   }
