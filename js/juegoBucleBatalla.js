@@ -3,8 +3,8 @@ function juegoBucleBatalla(){
   isoMapa.mostrarFondo(contextoJuego,isoImg);
   isoJugador.dibujar(contextoJuego,isoImg,isoMapa);
 
-  
-  isoMapa.calcularSelector(contextoJuego);
+
+  //isoMapa.calcularSelector(contextoJuego);
 
   setTimeout(juegoBucleBatalla,60);
   }

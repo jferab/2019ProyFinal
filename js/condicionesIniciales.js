@@ -29,15 +29,16 @@ console.log(obj);
 createjs.Tween.get(obj)
 .to({x:10}, 3000)
 .call(function(){console.log("fin");});*/
-
+/*
 estrella = new IsoEstrella();
 //estrella.actualizarArr(1,3,"j");
 estrella.actualizarArr(3,2,true);
 estrella.actualizarArr(3,3,true);
 estrella. actualizarArr(3,4,true);
 
-estrella.buscarCamino("1a3","5a3")
+estrella.buscarCamino("1a3","5a3")*/
 
 
 
-norVentana.mostrarJuego();
+//norVentana.mostrarJuego();
+norVentana.mostrarInicio();
