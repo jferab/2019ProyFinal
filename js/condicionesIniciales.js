@@ -40,5 +40,5 @@ estrella.buscarCamino("1a3","5a3")*/
 
 
 
-//norVentana.mostrarJuego();
-norVentana.mostrarInicio();
+norVentana.mostrarJuego();
+//norVentana.mostrarInicio();

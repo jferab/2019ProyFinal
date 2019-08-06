@@ -13,7 +13,7 @@ function IsoJugador(){
   this.dibujar = function(ctx,img,mapa) {
 
     var tmpImg = "";
-    console.log(config.personaje);
+    //console.log(config.personaje);
     switch (config.personaje) {
       case 1: tmpImg = img.imgPersonaje1d; break;
       case 2: tmpImg = img.imgPersonaje2d; break;

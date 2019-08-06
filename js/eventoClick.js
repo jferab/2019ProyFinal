@@ -31,8 +31,8 @@ $( "#juegoMain" ).click(function(e) {
   isoMapa.asignarSelPos(e.clientX,e.clientY)
 });
 $( "#juegoMain" ).mousemove(function(e) {
-  isoMapa.asignarSelPos(e.clientX,e.clientY)
-  isoMapa.asignarDesfase(e.clientX,e.clientY,norVentana)
+  //isoMapa.asignarSelPos(e.clientX,e.clientY)
+  //isoMapa.asignarDesfase(e.clientX,e.clientY,norVentana)
 
 });
 

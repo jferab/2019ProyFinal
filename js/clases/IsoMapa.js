@@ -32,6 +32,8 @@ function IsoMapa(){
       ctx.stroke();
       ctx.closePath();
     }
+
+
 /*
     ctx.fillStyle="red";
     for (var i=0;i<this.maxCuad;i++) {
@@ -51,15 +53,27 @@ function IsoMapa(){
 
   this.dibujarImagenFondo = function(ctx,img) {
     var px= 0, py=0;
-    for(var i = 0;i<3;i++){
-      for(var j = 0;j<3;j++){
-        px = convIsoX(i*256,j*256);
-        py = convIsoY(i*256,j*256);
+    for(var i = 0;i<12;i++){
+      for(var j = 0;j<12;j++){
+        px = convIsoX(i*32,j*32);
+        py = convIsoY(i*32,j*32);
 
-        ctx.drawImage(img.imgPasto,px+this.desfaseX-256,py+this.desfaseY);
+        ctx.drawImage(img.imgPasto,px+this.desfaseX-34,py+this.desfaseY-5);
       }
     }
   }
+
+    this.dibujarImagenFondoPasto = function(ctx,img) {
+      var px= 0, py=0;
+      for(var i = 0;i<3;i++){
+        for(var j = 0;j<3;j++){
+          px = convIsoX(i*256,j*256);
+          py = convIsoY(i*256,j*256);
+
+          ctx.drawImage(img.imgPasto,px+this.desfaseX-256,py+this.desfaseY);
+        }
+      }
+    }
 
   this.calcularSelector = function(ctx) {
     var est = new IsoEstrella();
